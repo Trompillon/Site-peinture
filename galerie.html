@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie - Les Peintures de Maman</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="gallery-hero">
+        <nav class="navbar">
+            <div class="logo"><a href="index.html" style="color:white; text-decoration:none;">L'ATELIER DE FRANCOISE</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">ACCUEIL</a></li>
+                <li><a href="galerie.html?category=animaux">ANIMAUX</a></li>
+                <li><a href="galerie.html?category=paysages">PAYSAGES</a></li>
+                <li><a href="galerie.html?category=feerique">FÉERIQUE</a></li>
+                <li><a href="galerie.html?category=portraits">PORTRAITS</a></li>
+            </ul>
+        </nav>
+        <div class="gallery-banner">
+            <h1 id="category-title">Galerie complète</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="gallery-grid" class="gallery-grid">
+        </div>
+    </main>
+
+    <div id="modal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img-full">
+        <div id="caption"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Site réalisé par Trompillon</p>
+    </footer>
+
+</body>
+</html>
