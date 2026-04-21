@@ -62,7 +62,7 @@ const paintings = [
     { title: "Le sanctuaire des loups", category: "feerique", img: "img/feerique/le-sanctuaire-des-loups.jpg" },
     { title: "Marionnettes Thailandaises", category: "feerique", img: "img/feerique/marionnettes-thailandaises.jpg" },
     { title: "Masque de Venise", category: "feerique", img: "img/feerique/masque-de-venise.jpg" },
-    { title: "Mona Loa", category: "feerique", img: "img/feerique/Mona-Loa.jpg" },
+    { title: "Mona Loa", category: "feerique", img: "img/feerique/mona-loa.jpg" },
     { title: "Rêves de palais", category: "feerique", img: "img/feerique/reves-de-palais.jpg" },
     { title: "Smaug", category: "feerique", img: "img/feerique/smaug.jpg" },
     { title: "Vortex", category: "feerique", img: "img/feerique/vortex.jpg" },
