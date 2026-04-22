@@ -81,7 +81,7 @@ const paintings = [
 
 // 1. DÉMARRAGE DU SITE
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // Gestion de la Galerie
     const grid = document.getElementById('gallery-grid');
     if (grid) {
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const titleDisplay = document.getElementById('category-title');
 
         if (cat) {
-            titleDisplay.textContent = cat.toUpperCase();
+            if (titleDisplay) titleDisplay.textContent = cat.toUpperCase();
             const filtered = paintings.filter(p => p.category === cat);
             render(filtered);
         } else {
@@ -110,11 +110,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Gestion du Menu Burger
+    const burger = document.getElementById('burger');
+    const nav = document.getElementById('nav-links');
+
+    if (burger) {
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            burger.classList.toggle('toggle-burger'); // Animation en croix
+        });
+    }
+
+    // Gestion du bouton Back to Top (Scroll Up)
+    const topBtn = document.getElementById("backToTop");
+    if (topBtn) {
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                topBtn.style.display = "flex"; // "flex" pour garder le centrage du SVG
+            } else {
+                topBtn.style.display = "none";
+            }
+        };
+
+        topBtn.onclick = function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        };
+    }
+
     // Lancement du Carrousel
     initCarousel();
 });
 
-// 2. LES FONCTIONS (À l'extérieur pour la clarté)
+// 2. LES FONCTIONS
 
 function initCarousel() {
     const container = document.getElementById('carousel');
@@ -141,10 +171,15 @@ function initCarousel() {
     }, 5000);
 }
 
+// Fonction qui affiche les images dans la grille
 function render(data) {
     const grid = document.getElementById('gallery-grid');
     if (!grid) return;
 
+    grid.classList.remove('effet-chargement');
+    grid.classList.add('effet-chargement');
+
+    // Regarde bien : j'ai ajouté loading="lazy" directement dans le <img>
     grid.innerHTML = data.map(item => `
         <div class="paint-card" onclick="openModal(\`${item.img}\`, \`${item.title}\`)">
             <img src="${item.img}" alt="${item.title}" loading="lazy">
@@ -160,26 +195,18 @@ function openModal(imgSrc, title) {
     const modalImg = document.getElementById('img-full');
     const captionText = document.getElementById('caption');
     
-    modal.style.display = "flex"; // "flex" pour bien centrer
-    modalImg.src = imgSrc;
-    captionText.innerHTML = title;
-    document.body.style.overflow = "hidden";
+    if (modal && modalImg) {
+        modal.style.display = "flex";
+        modalImg.src = imgSrc;
+        captionText.innerHTML = title;
+        document.body.style.overflow = "hidden";
+    }
 }
 
 function closeModal() {
     const modal = document.getElementById('modal');
-    modal.style.display = "none";
-    document.body.style.overflow = "auto";
-}
-
-const burger = document.getElementById('burger');
-const nav = document.getElementById('nav-links');
-
-if (burger) {
-    burger.addEventListener('click', () => {
-        nav.classList.toggle('active'); // On ajoute/enlève la classe active
-        
-        // Bonus : Animation des barres du burger en "X"
-        burger.classList.toggle('toggle-burger');
-    });
+    if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
 }
