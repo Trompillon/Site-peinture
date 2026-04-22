@@ -41,7 +41,7 @@ const paintings = [
     { title: "Jardin du maître des filets", category: "paysages", img: "img/paysages/jardin-du-maitre-des-filets.jpg" },
     { title: "La Baie d'Along", category: "paysages", img: "img/paysages/la-baie-d-along.jpg" },
     { title: "Le château de Conwey", category: "paysages", img: "img/paysages/le-chateau-de-conwey.jpg" },
-    { title: "Le temple du savoir", category: "paysages", img: "img/paysages/le-temple-du-savoir.jpg", top: true },
+    { title: "Le temple du savoir", category: "paysages", img: "img/paysages/le-temple-du-savoir.jpg", },
     { title: "Machu Pichu", category: "paysages", img: "img/paysages/machu-pichu.jpg" },
     { title: "Mélancolie", category: "paysages", img: "img/paysages/melancolie.jpg" },
     { title: "Paris la nuit", category: "paysages", img: "img/paysages/paris-la-nuit.jpg" },
@@ -76,7 +76,6 @@ const paintings = [
     { title: "Pauline et Jean-baptiste", category: "portraits", img: "img/portraits/pauline-et-jean-baptiste.jpg" },
     { title: "Ragnar Lothbroc", category: "portraits", img: "img/portraits/ragnar-lothbroc.jpg" },
     { title: "Stephen King", category: "portraits", img: "img/portraits/stephen-king.jpg" },
-
     // Ajoute tes tableaux ici
 ];
 
@@ -171,4 +170,16 @@ function closeModal() {
     const modal = document.getElementById('modal');
     modal.style.display = "none";
     document.body.style.overflow = "auto";
+}
+
+const burger = document.getElementById('burger');
+const nav = document.getElementById('nav-links');
+
+if (burger) {
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('active'); // On ajoute/enlève la classe active
+        
+        // Bonus : Animation des barres du burger en "X"
+        burger.classList.toggle('toggle-burger');
+    });
 }
