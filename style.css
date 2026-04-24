@@ -154,23 +154,36 @@ img[src] {
 
 /* --- MODALE --- */
 .modal {
-    display: none; 
-    position: fixed; z-index: 1000;
-    padding-top: 50px; left: 0; top: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed; z-index: 3000;
+    padding-left: 0; top: 0;
     width: 100%; height: 100%;
     background-color: rgba(0,0,0,0.9);
     cursor: zoom-out;
 }
 
 .modal-content {
-    margin: auto; display: block;
-    max-width: 90%; max-height: 80vh;
+    display: block;
+    max-width: 90%; max-height: 70vh;
     object-fit: contain; /* L'image entière apparaît ici */
+}
+
+#caption {
+    margin-top: 20px; /* Espace entre l'image et le texte */
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    width: 80%; /* Pour éviter que le texte ne touche les bords sur mobile */
+    font-family: sans-serif; /* Ou la police de ton choix */
 }
 
 .close {
     position: absolute; top: 20px; right: 35px;
     color: white; font-size: 40px; cursor: pointer;
+    z-index: 3001;
 }
 
 /* --- SCROLL UP --- */

@@ -194,13 +194,20 @@ function openModal(imgSrc, title) {
     const modal = document.getElementById('modal');
     const modalImg = document.getElementById('img-full');
     const captionText = document.getElementById('caption');
+    const backToTop = document.getElementById('backToTop');
     
     if (modal && modalImg) {
         modal.style.display = "flex";
         modalImg.src = imgSrc;
         captionText.innerHTML = title;
         document.body.style.overflow = "hidden";
+
+        if (backToTop) {
+        backToTop.style.visibility = "hidden"; 
+        }
+
     }
+
 }
 
 function closeModal() {
@@ -208,5 +215,9 @@ function closeModal() {
     if (modal) {
         modal.style.display = "none";
         document.body.style.overflow = "auto";
+
+        if (backToTop) {
+            backToTop.style.visibility = "visible";
+        }
     }
 }
