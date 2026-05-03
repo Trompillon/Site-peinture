@@ -67,7 +67,10 @@ const paintings = [
     { title: "Smaug", category: "feerique", img: "img/feerique/smaug.jpg" },
     { title: "Vortex", category: "feerique", img: "img/feerique/vortex.jpg" },
     { title: "Bébé du Noursitan", category: "portraits", img: "img/portraits/bebe-du-noursitan.jpg" },
+    { title: "Femme tibétaine", category: "portraits", img: "img/portraits/femme-tibetaine.jpg" },
+    { title: "Jaimie Lanister", category: "portraits", img: "img/portraits/jaimie-lanister.jpg" },
     { title: "Jeune moine boutanais", category: "portraits", img: "img/portraits/jeune-moine-boutanais.jpg" },
+    { title: "Jeune moine tibétain", category: "portraits", img: "img/portraits/jeune-moine-tibetain.jpg" },
     { title: "Jim Morrison", category: "portraits", img: "img/portraits/jim-morrison.jpg" },
     { title: "Jon et fantôme", category: "portraits", img: "img/portraits/jon-et-fantome.jpg" },
     { title: "La petite chinoise", category: "portraits", img: "img/portraits/la-petite-chinoise.jpg", top: true },
@@ -76,7 +79,7 @@ const paintings = [
     { title: "Pauline et Jean-baptiste", category: "portraits", img: "img/portraits/pauline-et-jean-baptiste.jpg" },
     { title: "Ragnar Lothbroc", category: "portraits", img: "img/portraits/ragnar-lothbroc.jpg" },
     { title: "Stephen King", category: "portraits", img: "img/portraits/stephen-king.jpg" },
-    // Ajoute tes tableaux ici
+    // Ajoute de tableaux
 ];
 
 // 1. DÉMARRAGE DU SITE
@@ -179,7 +182,6 @@ function render(data) {
     grid.classList.remove('effet-chargement');
     grid.classList.add('effet-chargement');
 
-    // Regarde bien : j'ai ajouté loading="lazy" directement dans le <img>
     grid.innerHTML = data.map(item => `
         <div class="paint-card" onclick="openModal(\`${item.img}\`, \`${item.title}\`)">
             <img src="${item.img}" alt="${item.title}" loading="lazy">
