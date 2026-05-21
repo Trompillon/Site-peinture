@@ -53,7 +53,6 @@ const paintings = [
     { title: "Venise", category: "paysages", img: "img/paysages/venise.jpg" },
     { title: "Au pays de l'enfance", category: "feerique", img: "img/feerique/au-pays-de-l-enfance.jpg" },
     { title: "Bataille de boules de neige", category: "feerique", img: "img/feerique/bataille-de-boules-de-neige.jpg" },
-    { title: "Berceuse", category: "feerique", img: "img/feerique/berceuse.jpg" },
     { title: "Carnaval de Venise", category: "feerique", img: "img/feerique/carnaval-de-venise.jpg" },
     { title: "Danseuse aux papillons", category: "feerique", img: "img/feerique/danseuse-aux-papillons.jpg" },
     { title: "De l'autre côté du mirroir", category: "feerique", img: "img/feerique/de-l-autre-cote-du-mirroir.jpg", top: true },
